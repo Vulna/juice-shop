@@ -21,7 +21,7 @@ export function profileImageUrlUpload () {
       const loggedInUser = security.authenticatedUsers.get(req.cookies.token)
       if (loggedInUser) {
         try {
-          const response = await fetch(url)
+          const response = {}
           if (!response.ok || !response.body) {
             throw new Error('url returned a non-OK status code or an empty body')
           }
