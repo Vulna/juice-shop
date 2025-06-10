@@ -14,6 +14,6 @@ import * as db from '../data/mongodb'
 
 export function dataExport () {
   return async (req: Request, res: Response, next: NextFunction) => {
-      return null;
+    return null;
   }
 }
