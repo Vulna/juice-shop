@@ -58,25 +58,6 @@ export function dataExport () {
         })
       })
 
-      db.ordersCollection.find({ email: updatedEmail }).then((orders: Array<{
-        orderId: string
-        totalPrice: number
-        products: ProductModel[]
-        bonus: number
-        eta: string
-      }>) => {
-        if (orders.length > 0) {
-          orders.forEach(order => {
-            userData.orders.push({
-              orderId: order.orderId,
-              totalPrice: order.totalPrice,
-              products: [...order.products],
-              bonus: order.bonus,
-              eta: order.eta
-            })
-          })
-        }
-
         db.reviewsCollection.find({ author: email }).then((reviews: Array<{
           message: string
           author: string
